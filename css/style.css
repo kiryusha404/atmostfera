@@ -1,0 +1,48 @@
+/* header */
+.img_header{
+    width: 100%;
+}
+.logo_header{
+    height: 50px;
+}
+.link_header{
+    color: green;
+}
+.header_nav{
+    border-bottom: 2px solid green;
+}
+
+/* address */
+
+.address{
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 2px solid green;
+    padding: 5px;
+}
+.address img{
+    width: 100%;
+
+}
+
+/* catalog */
+
+html{
+    overflow-x: hidden;
+}
+.tovar{
+    color: #000;
+    margin-bottom: 24px;
+}
+a {
+    text-decoration: none;
+}
+.card img{
+    margin-bottom: 5px;
+}
+
+/* product */
+
+.slide_tovar{
+    width: 600px;
+}
