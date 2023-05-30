@@ -34,11 +34,26 @@ html{
     color: #000;
     margin-bottom: 24px;
 }
+.tovar button{
+    width: 100%;
+}
+.tovar_f{
+    color: #000;
+}
 a {
     text-decoration: none;
 }
 .card img{
     margin-bottom: 5px;
+}
+.catalog_form{
+    display: inline;
+}
+.catalog_form p{
+    margin: 0;
+}
+.element_form{
+    display: inline-block;
 }
 
 /* product */
