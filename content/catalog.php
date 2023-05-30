@@ -1,5 +1,5 @@
 <?php
-    $push = 'SELECT id_sphere, name_sphere, price_sphere FROM sphere';
+    $push = 'SELECT id_sphere, name_sphere, price_sphere, aprice_sphere FROM sphere';
     $catalog = mysqli_query($atmostfera_db, $push);
 ?>
 
@@ -17,7 +17,7 @@ while ($product = mysqli_fetch_array($catalog)) {
                     echo $img_product['ucr_img'];
             ?>">
             <h5> <?php echo $product['name_sphere']; ?></h5>
-            <p> Цена за сутки: <?php echo $product['price_sphere']; ?></p>
+            <p> Цена за сутки: <?php if($product['aprice_sphere'] == 0){echo $product['price_sphere'];}else{ echo $product['aprice_sphere']; ?> <s><?php echo $product['price_sphere'];} ?></s></p>
         </div>        </a>    
     </div>
 <?php
