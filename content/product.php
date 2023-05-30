@@ -13,7 +13,7 @@
     <?php 
     $push = 'SELECT * FROM `sphere` where id_sphere = '.$id_product.'';
     $tovar = mysqli_query($atmostfera_db, $push);
-    $tovar_p = mysqli_fetch_array($tovar)
+    $tovar_p = mysqli_fetch_array($tovar);
     
 ?>
 <h3><?php echo $tovar_p['name_sphere']; ?></h3>
@@ -21,4 +21,12 @@
 <p>Вместимость: <?php echo $tovar_p['capacity_sphere']; ?></p>
 <p>Площадь: <?php echo $tovar_p['square_sphere']; ?></p>
 <p>Описание: <?php echo $tovar_p['description_sphere']; ?></p>
+<?php 
+    $push = 'SELECT * FROM `booking`WHERE id_sphere_fk = '.$id_product.' ORDER BY date2 DESC LIMIT 1';
+    $tovar = mysqli_query($atmostfera_db, $push);
+    $tovar_p = mysqli_fetch_array($tovar);  
+    $date1 = date("d.m.y", strtotime($tovar_p['date2'].'+ 1 days'));  
+?>
+<p>Забронировать можно <?php if($tovar_p['date2']){ echo 'c '.$date1.'';}else{echo 'уже сегодня';} ?></p>
+<button onclick="document.location='booking?id=<?php echo $id_product; ?>'">Бронировать</button>
     </div>

@@ -33,8 +33,8 @@ while ($product = mysqli_fetch_array($catalog)) {
                     echo $img_product['ucr_img'];
             ?>">
             <h5> <?php echo $product['name_sphere']; ?></h5>
-            <p> Цена за сутки: <?php if($product['aprice_sphere'] == 0){echo ($product['price_sphere'] * $interval);}else{ echo ($product['aprice_sphere'] * $interval); ?> <s><?php echo ($product['price_sphere'] * $interval);} ?></s></p>
-        </div>        </a><button><?php if(!$_POST['date1'] && !$_POST['date2']){echo 'Проверить наличие';}else{echo 'Бронировать';}?></button>   </div> 
+            <p> Цена: <?php if($product['aprice_sphere'] == 0){echo ($product['price_sphere'] * $interval);}else{ echo ($product['aprice_sphere'] * $interval); ?> <s><?php echo ($product['price_sphere'] * $interval);} ?></s></p>
+        </div>        </a><button onclick="document.location='<?php if(!$_POST['date1'] && !$_POST['date2']){echo 'product?id='.$product['id_sphere'].'';}else{echo 'booking?id='.$product['id_sphere'].'';}?>';"><?php if(!$_POST['date1'] && !$_POST['date2']){echo 'Проверить наличие';}else{echo 'Бронировать';}?></button>   </div> 
     </div>
 <?php
 }

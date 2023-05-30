@@ -33,6 +33,11 @@
           <a class="nav-link link_header" href="address">Где нас найти?</a>
         </li>
         <li class="nav-item">
+        <?php if($_SESSION['id_us']){ 
+            print '<a class="nav-link link_header" href="order">Бронирования</a>';
+           } ?>
+        </li>
+        <li class="nav-item">
         <?php if(!$_SESSION['id_us']){ 
             print '<a class="nav-link link_header" href="authorization">Войти</a>';
            } else{ 
