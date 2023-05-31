@@ -4,6 +4,6 @@
         header('Location: authorization');
     }
     include('basis/header.php');
-    include('content/order.php');
+    include('content/transform.php');
     include('basis/footer.php');
 ?>

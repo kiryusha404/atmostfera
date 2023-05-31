@@ -153,3 +153,22 @@ a {
     width: 60%;
     margin: 10px auto;
 }
+/* order */
+
+.order{
+    width: 80%;
+    margin: 10px auto;
+}
+.order_element{
+    width: 100%;
+    height: 150px;
+    margin: 10px auto;
+    
+
+}
+.order_element img{
+    height: 150px;
+}
+.order_in{
+    display: inline-block;
+}
