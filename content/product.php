@@ -29,4 +29,12 @@
 ?>
 <p>Забронировать можно <?php if($tovar_p['date2']){ echo 'c '.$date1.'';}else{echo 'уже сегодня';} ?></p>
 <button onclick="document.location='booking?id=<?php echo $id_product; ?>'">Бронировать</button>
+<?php 
+    if($_SESSION['role_us'] == 'admin'){
+        echo '<div class="menu_admin">
+                <a href="rewrite?id='.$id_product.'"><div class="element_menu_admin"><p>Редактировать информацию</p></div></a>
+                <a href="delete_tovar?id='.$id_product.'"><div class="element_menu_admin"><p>Удалить товар</p></div></a>
+              </div>';
+    }
+?>
     </div>

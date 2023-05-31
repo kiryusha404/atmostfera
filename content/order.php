@@ -21,6 +21,13 @@
     <p class="order_in"> Статус: </p>
     <p class="order_in"><?php echo $row['status_booking']; ?></p>
     <?php
+        if($row['status_booking']=='del'){
+    ?>
+        <p class="order_in">Причина отказа: <?php echo $row['comment']; ?></p>
+    <?php
+        }
+    ?>
+    <?php
         if($row['status_booking']=='new'){
     ?>
         <button class="order_in" onclick="document.location='transform_order?id=<?php echo $row['id_booking']; ?>'">Редактировать</button>

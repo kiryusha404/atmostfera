@@ -34,14 +34,14 @@
             return 1;
 
         }
-
+        $currentDate = date('Y-m-d');
         $push = 'SELECT * FROM `booking`WHERE id_sphere_fk = '.$id_product.' ORDER BY date2 DESC LIMIT 1';
         $tovar = mysqli_query($atmostfera_db, $push);
         $tovar_p = mysqli_fetch_array($tovar);  
         $date1 = date("y-m-d", strtotime($tovar_p['date2'].'+ 1 days')); 
             if(valid($_POST['people'], $row['capacity_sphere'], $_POST['date1'], $_POST['date2'], $date1) == 1){
                 $date1 = date("20y-m-d", strtotime($_POST['date2'].'+ 1 days')); 
-                $push = 'INSERT INTO `booking` (`id_booking`, `id_user_fk`, `id_sphere_fk`, `date1`, `date2`, `status_booking`, `people`) VALUES (NULL, '.$_SESSION['id_us'].', '.$id_product.', "'.$_POST['date1'].'", "'.$date1.'", "new", '.$_POST['people'].');';
+                $push = 'INSERT INTO `booking` (`id_booking`, `id_user_fk`, `id_sphere_fk`, `date1`, `date2`, `status_booking`, `people`, `time`) VALUES (NULL, '.$_SESSION['id_us'].', '.$id_product.', "'.$_POST['date1'].'", "'.$date1.'", "new", '.$_POST['people'].', "'.$currentDate.'");';
                 $tovar = mysqli_query($atmostfera_db, $push);
                 echo "<script>window.location.href='order'</script>";
             }

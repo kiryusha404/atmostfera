@@ -1,4 +1,10 @@
 <?php
+if($_SESSION['role_us'] == 'admin'){
+    echo '<div class="menu_admin">
+            <a href="add_tovar"><div class="element_menu_admin"><p>+ Добавить товар</p></div></a>
+            <a href="category"><div class="element_menu_admin"><p>Изменить категории</p></div></a>
+          </div>';
+}
     $push = 'SELECT id_sphere, name_sphere, price_sphere, aprice_sphere FROM sphere';
     $interval = 1;
 ?>

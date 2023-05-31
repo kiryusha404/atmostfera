@@ -33,6 +33,11 @@
           <a class="nav-link link_header" href="address">Где нас найти?</a>
         </li>
         <li class="nav-item">
+        <?php if($_SESSION['role_us']=='admin'){ 
+            print '<a class="nav-link link_header" href="admin">Админ панель</a>';
+           } ?>
+        </li>
+        <li class="nav-item">
         <?php if($_SESSION['id_us']){ 
             print '<a class="nav-link link_header" href="order">Бронирования</a>';
            } ?>
